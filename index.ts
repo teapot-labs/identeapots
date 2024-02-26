@@ -1,4 +1,3 @@
-import { createCanvas } from "canvas";
 import { hashString } from "./src/hash";
 import { getBoolMatrix } from "./src/matrix";
 import { getNeighbours } from "./src/neighbours";
@@ -27,7 +26,9 @@ export function generateIdenteapot(seed: string): string {
   const matrix = getBoolMatrix(hash, patternSize);
 
   // Create a canvas element for the identicon
-  const canvas = createCanvas(size, size);
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
   const context = canvas.getContext("2d");
 
   // Get hue for both foreground and background

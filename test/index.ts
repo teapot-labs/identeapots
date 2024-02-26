@@ -1,7 +1,8 @@
 import fs from "fs";
+import { exit } from "process";
 import { generateIdenteapot } from "../index";
 import { waitInput } from "./utils/wait-input";
-import { exit } from "process";
+import "global-jsdom/register";
 
 (async () => {
   const outputDir = "test/gen";

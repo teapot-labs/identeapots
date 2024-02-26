@@ -1,5 +1,3 @@
-import { CanvasRenderingContext2D } from "canvas";
-
 type SemicircleOrientation = "up" | "right" | "down" | "left";
 type QuarterCircleOrientation = "top-left" | "top-right" | "bottom-right" | "bottom-left";
 

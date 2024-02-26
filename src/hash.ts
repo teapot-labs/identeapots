@@ -9,6 +9,5 @@ const salt = "teapotlabs";
  */
 export function hashString(str: string): string {
   const seed = str + salt;
-  console.log(seed);
   return MD5(seed).toString();
 }
