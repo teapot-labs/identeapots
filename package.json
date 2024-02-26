@@ -12,20 +12,26 @@
   },
   "homepage": "https://github.com/teapot-labs/identeapots#readme",
   "license": "ISC",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "index.js",
-    "src/**/*"
+    "dist/**/*"
   ],
   "scripts": {
-    "test": "node test/index.js"
+    "clean": "rimraf dist/",
+    "build": "npm run clean && tsc",
+    "test": "ts-node test/index.ts"
   },
   "dependencies": {
     "canvas": "^2.11.2",
-    "crypto-js": "^4.2.0"
+    "crypto-js": "^4.2.0",
+    "node": "^21.6.2"
   },
-  "directories": {
-    "test": "test"
-  },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^20.11.20",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
 }

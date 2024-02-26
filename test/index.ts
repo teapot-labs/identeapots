@@ -1,6 +1,7 @@
-const fs = require("fs");
-const { generateIdenteapot } = require("..");
-const { waitInput } = require("./utils/wait-input");
+import fs from "fs";
+import { generateIdenteapot } from "../index";
+import { waitInput } from "./utils/wait-input";
+import { exit } from "process";
 
 (async () => {
   const outputDir = "test/gen";
@@ -15,4 +16,5 @@ const { waitInput } = require("./utils/wait-input");
   fs.writeFileSync(filename, base64Data, "base64");
 
   console.log(`Identicon saved as ${filename}`);
+  exit(0);
 })();

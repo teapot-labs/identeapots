@@ -1,8 +1,8 @@
-const { createCanvas } = require("canvas");
-const { hashString } = require("./src/hash");
-const { getBoolMatrix } = require("./src/matrix");
-const { getNeighbours } = require("./src/neighbours");
-const paths = require("./src/paths");
+import { createCanvas } from "canvas";
+import { hashString } from "./src/hash";
+import { getBoolMatrix } from "./src/matrix";
+import { getNeighbours } from "./src/neighbours";
+import * as paths from "./src/paths";
 
 // Color variables
 const coloredCellLightness = 60; // Adjusted lightness for colored cells
@@ -17,7 +17,12 @@ const patternSize = 7; // Size of the identicon pattern (number of cells in each
 const padding = (gridSize - patternSize) / 2; // Padding around the identicon pattern in grid cells
 const overlap = 0.5; // Overlap to avoid gaps between cells in pixels
 
-exports.generateIdenteapot = function (seed) {
+/**
+ * Generates an identeapot from the provided `seed`.
+ * @param seed The seed to use for generating the identeapot.
+ * @returns The generated identeapot as a data URL.
+ */
+export function generateIdenteapot(seed: string): string {
   const hash = hashString(seed);
   const matrix = getBoolMatrix(hash, patternSize);
 
@@ -82,4 +87,4 @@ exports.generateIdenteapot = function (seed) {
   }
 
   return canvas.toDataURL();
-};
+}

@@ -1,36 +1,41 @@
+import { CanvasRenderingContext2D } from "canvas";
+
+type SemicircleOrientation = "up" | "right" | "down" | "left";
+type QuarterCircleOrientation = "top-left" | "top-right" | "bottom-right" | "bottom-left";
+
 /**
  * Draws a square on the canvas at the specified x and y coordinates with the specified size.
- * @param {CanvasRenderingContext2D} context The 2D context of the canvas to draw on.
- * @param {number} x The x coordinate of the left of the square.
- * @param {number} y The y coordinate of the top of the square.
- * @param {number} size The size of the square.
+ * @param context The 2D context of the canvas to draw on.
+ * @param x The x coordinate of the left of the square.
+ * @param y The y coordinate of the top of the square.
+ * @param size The size of the square.
  */
-exports.square = function (context, x, y, size) {
+export function square(context: CanvasRenderingContext2D, x: number, y: number, size: number) {
   context.fillRect(x, y, size, size);
-};
+}
 
 /**
  * Draw a circle on the canvas at the specified x and y coordinates with the specified radius.
- * @param {CanvasRenderingContext2D} context The 2D context of the canvas to draw on.
- * @param {number} x The x coordinate of the left of the circle.
- * @param {number} y The y coordinate of the top of the circle.
- * @param {number} radius The radius of the circle.
+ * @param context The 2D context of the canvas to draw on.
+ * @param x The x coordinate of the left of the circle.
+ * @param y The y coordinate of the top of the circle.
+ * @param radius The radius of the circle.
  */
-exports.circle = function (context, x, y, radius) {
+export function circle(context: CanvasRenderingContext2D, x: number, y: number, radius: number) {
   context.beginPath();
   context.arc(x + radius, y + radius, radius, 0, 2 * Math.PI);
   context.fill();
-};
+}
 
 /**
  * Draw a shape on the canvas composed of a rectangle with a semicircle on top at the specified x and y coordinates with the specified size and orientation.
- * @param {CanvasRenderingContext2D} context The 2D context of the canvas to draw on.
- * @param {number} x The x coordinate of the left of the shape.
- * @param {number} y The y coordinate of the top of the shape.
- * @param {number} size The size of the shape.
- * @param {"up" | "right" | "down" | "left"} orientation The orientation of the shape.
+ * @param context The 2D context of the canvas to draw on.
+ * @param x The x coordinate of the left of the shape.
+ * @param y The y coordinate of the top of the shape.
+ * @param size The size of the shape.
+ * @param orientation The orientation of the shape.
  */
-exports.semicircleOnRectangle = function (context, x, y, size, orientation) {
+export function semicircleOnRectangle(context: CanvasRenderingContext2D, x: number, y: number, size: number, orientation: SemicircleOrientation) {
   context.beginPath();
   if (orientation === "up") {
     context.moveTo(x, y);
@@ -54,17 +59,17 @@ exports.semicircleOnRectangle = function (context, x, y, size, orientation) {
     context.arc(x + size / 2, y + size / 2, size / 2, Math.PI * 1.5, Math.PI * 0.5);
   }
   context.fill();
-};
+}
 
 /**
  * Draw a quarter circle on the canvas at the specified x and y coordinates with the specified radius and orientation.
- * @param {CanvasRenderingContext2D} context The 2D context of the canvas to draw on.
- * @param {number} x The x coordinate of the left of the quarter circle.
- * @param {number} y The y coordinate of the top of the quarter circle.
- * @param {number} radius The radius of the quarter circle.
- * @param {"top-left" | "top-right" | "bottom-right" | "bottom-left"} orientation The orientation of the quarter circle.
+ * @param context The 2D context of the canvas to draw on.
+ * @param x The x coordinate of the left of the quarter circle.
+ * @param y The y coordinate of the top of the quarter circle.
+ * @param radius The radius of the quarter circle.
+ * @param orientation The orientation of the quarter circle.
  */
-exports.quarterCircle = function (context, x, y, radius, orientation) {
+export function quarterCircle(context: CanvasRenderingContext2D, x: number, y: number, radius: number, orientation: QuarterCircleOrientation) {
   context.beginPath();
   if (orientation === "top-left") {
     context.moveTo(x, y);
@@ -80,4 +85,4 @@ exports.quarterCircle = function (context, x, y, radius, orientation) {
     context.arc(x, y + radius, radius, Math.PI * 1.5, Math.PI * 2);
   }
   context.fill();
-};
+}

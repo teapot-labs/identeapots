@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "lib": ["esnext", "dom"],
+    "declaration": true,
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "jsx": "react"
+  },
+  "exclude": ["node_modules", "dist", "test"],
+  "include": ["**/*.ts", "**/*.tsx"]
+}
