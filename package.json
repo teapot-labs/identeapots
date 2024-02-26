@@ -1,0 +1,31 @@
+{
+  "name": "@teapotlabs/identeapots",
+  "version": "1.0.0",
+  "description": "Utility library to generate unique identicons from a string",
+  "author": "Teapot Labs <info@teapotlabs.it>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teapot-labs/identeapots.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teapot-labs/identeapots/issues"
+  },
+  "homepage": "https://github.com/teapot-labs/identeapots#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "src/**/*"
+  ],
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "crypto-js": "^4.2.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
+}
