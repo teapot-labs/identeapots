@@ -20,7 +20,7 @@
   "scripts": {
     "clean": "rimraf dist/",
     "build": "npm run clean && tsc",
-    "test": "ts-node test/index.ts"
+    "test": "cd test && npm run start"
   },
   "dependencies": {
     "crypto-js": "^4.2.0",
@@ -28,10 +28,7 @@
   },
   "devDependencies": {
     "@types/crypto-js": "^4.2.2",
-    "@types/jsdom": "^21.1.6",
     "@types/node": "^20.11.20",
-    "global-jsdom": "^24.0.0",
-    "jsdom": "^24.0.0",
     "rimraf": "^5.0.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
