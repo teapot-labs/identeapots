@@ -7,7 +7,7 @@ Identeapots is a simple TypeScript library for generating identicon images.
 ## Installation
 
 ```bash
-npm i identeapots
+npm i @teapotlabs/identeapots
 ```
 
 ## Usage
