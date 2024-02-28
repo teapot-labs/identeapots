@@ -1,6 +1,6 @@
 {
   "name": "@teapotlabs/identeapots",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "description": "Identeapots is a simple TypeScript library for generating identicon images.",
   "author": "Teapot Labs <info@teapotlabs.it>",
