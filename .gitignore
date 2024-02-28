@@ -132,8 +132,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Project-specific files
-test/gen/
+# MacOS
+.DS_Store
 
 # Project-specific files
+test/gen/
 .npmrc
