@@ -30,7 +30,7 @@ export async function generateIdenteapot(seed: string, salt?: string): Promise<s
   const canvas = document.createElement("canvas");
   canvas.width = size;
   canvas.height = size;
-  const context = canvas.getContext("2d");
+  const context = canvas.getContext("2d") as CanvasRenderingContext2D;
 
   // Get hue for both foreground and background
   const hue = (hash.charCodeAt(0) * colorVariation) % 360;
