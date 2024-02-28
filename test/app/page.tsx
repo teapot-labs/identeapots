@@ -20,7 +20,7 @@ export default function Home() {
   useEffect(() => {
     let image: string | null = null;
     if (state.input !== "") {
-      image = generateIdenteapot(state.input);
+      image = generateIdenteapot(state.input, process.env.NEXT_PUBLIC_IDENTEAPOTS_SALT);
     }
     setState(prev => ({ ...prev, image }));
   }, [state.input]);
