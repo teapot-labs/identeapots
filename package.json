@@ -2,7 +2,7 @@
   "name": "@teapotlabs/identeapots",
   "version": "1.0.3",
   "private": false,
-  "description": "Utility library to generate unique identicons from a string",
+  "description": "Identeapots is a simple TypeScript library for generating identicon images.",
   "author": "Teapot Labs <info@teapotlabs.it>",
   "repository": {
     "type": "git",
