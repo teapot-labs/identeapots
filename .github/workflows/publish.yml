@@ -25,8 +25,3 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #- uses: JS-DevTools/npm-publish@v3
-      #  id: teapotlabs-publish
-      #  with:
-      #    token: ${{ secrets.TEAPOT_TOKEN }}
-      #    registry: ${{ secrets.TEAPOT_REGISTRY }}
