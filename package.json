@@ -23,14 +23,11 @@
     "test": "cd test && npm run start"
   },
   "dependencies": {
-    "crypto-js": "^4.2.0",
-    "node": "^21.6.2"
+    "crypto-js": "^4.2.0"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.2.2",
-    "@types/node": "^20.11.20",
     "rimraf": "^5.0.5",
-    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
 }
