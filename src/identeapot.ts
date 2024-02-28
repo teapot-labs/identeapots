@@ -6,7 +6,7 @@ import * as paths from "./paths";
 // Color variables
 const coloredCellLightness = 60; // Adjusted lightness for colored cells
 const emptyCellLightness = 90; // Adjusted lightness for the background
-const colorVariation = 5; // Variation in hue for foreground and background
+const paletteSize = 8; // Number of colors in the palette
 
 // Identicon variables
 const size = 400; // Size of the final image in pixels
@@ -33,7 +33,7 @@ export async function generateIdenteapot(seed: string, salt?: string): Promise<s
   const context = canvas.getContext("2d") as CanvasRenderingContext2D;
 
   // Get hue for both foreground and background
-  const hue = (hash.charCodeAt(0) * colorVariation) % 360;
+  const hue = ((parseInt(hash.substring(0, 2), 16) / paletteSize) * 360) % 360;
 
   // Draw background color
   context.fillStyle = `hsl(${hue}, 70%, ${emptyCellLightness}%)`;
