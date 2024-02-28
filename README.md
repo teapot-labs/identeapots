@@ -15,7 +15,7 @@ npm i @teapotlabs/identeapots
 The return value of the `generateIdenteapot` function is [a base64 encoded string of the generated identicon image.](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
 
 ```typescript
-import { generateIdenteapot } from "identeapots";
+import { generateIdenteapot } from "@teapotlabs/identeapots";
 
 const identicon: string = generateIdenteapot("hello world", "salt");
 ```
