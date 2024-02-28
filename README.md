@@ -1,4 +1,4 @@
-<img src="https://github.com/teapot-labs/identeapots/raw/main/identeapots.png" title="Identeapots" width="100%"/>
+<img src="https://github.com/teapot-labs/identeapots/raw/main/assets/identeapots.png" title="Identeapots" width="100%"/>
 
 # Indeteapots
 
@@ -28,7 +28,7 @@ Which can be used in `<img>` tags as `src` attribute.
 
 This will generate the following image:
 
-<img src="https://github.com/teapot-labs/identeapots/raw/main/hello-world.png" title="Example Identeapot" width="200px"/>
+<img src="https://github.com/teapot-labs/identeapots/raw/main/assets/hello-world.png" title="Example Identeapot" width="200px"/>
 
 ## Example
 
