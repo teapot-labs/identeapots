@@ -134,3 +134,6 @@ dist
 
 # Project-specific files
 test/gen/
+
+# Project-specific files
+.npmrc
