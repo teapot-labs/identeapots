@@ -18,11 +18,13 @@ export default function Home() {
   const [state, setState] = useState<State>(initialState);
 
   useEffect(() => {
-    let image: string | null = null;
-    if (state.input !== "") {
-      image = generateIdenteapot(state.input, process.env.NEXT_PUBLIC_IDENTEAPOTS_SALT);
+    if (state.input === "") {
+      setState(prev => ({ ...prev, image: null }));
+      return;
     }
-    setState(prev => ({ ...prev, image }));
+    generateIdenteapot(state.input, process.env.NEXT_PUBLIC_IDENTEAPOTS_SALT).then(image => {
+      setState(prev => ({ ...prev, image }));
+    });
   }, [state.input]);
 
   return (

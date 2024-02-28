@@ -22,8 +22,8 @@ const overlap = 0.5; // Overlap to avoid gaps between cells in pixels
  * @param salt The salt to use for hashing the seed.
  * @returns The generated identeapot as a data URL.
  */
-export function generateIdenteapot(seed: string, salt?: string): string {
-  const hash = hashString(seed, salt);
+export async function generateIdenteapot(seed: string, salt?: string): Promise<string> {
+  const hash = await hashString(seed, salt);
   const matrix = getBoolMatrix(hash, patternSize);
 
   // Create a canvas element for the identicon

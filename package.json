@@ -22,11 +22,7 @@
     "build": "npm run clean && tsc",
     "test": "npm run dev --prefix test/"
   },
-  "dependencies": {
-    "crypto-js": "^4.2.0"
-  },
   "devDependencies": {
-    "@types/crypto-js": "^4.2.2",
     "rimraf": "^5.0.5",
     "typescript": "^5.3.3"
   }
