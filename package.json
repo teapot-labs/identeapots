@@ -1,6 +1,6 @@
 {
   "name": "@teapotlabs/identeapots",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Utility library to generate unique identicons from a string",
   "author": "Teapot Labs <info@teapotlabs.it>",
   "repository": {
