@@ -25,6 +25,10 @@ Which can be used in `<img>` tags as `src` attribute.
 <img src=identicon alt="Identeapot" />
 ```
 
+## Exaple
+
+A complete example of a NextJS application is available in the `/test` folder
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
