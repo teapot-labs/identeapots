@@ -19,10 +19,11 @@ const overlap = 0.5; // Overlap to avoid gaps between cells in pixels
 /**
  * Generates an identeapot from the provided `seed`.
  * @param seed The seed to use for generating the identeapot.
+ * @param salt The salt to use for hashing the seed.
  * @returns The generated identeapot as a data URL.
  */
-export function generateIdenteapot(seed: string): string {
-  const hash = hashString(seed);
+export function generateIdenteapot(seed: string, salt?: string): string {
+  const hash = hashString(seed, salt);
   const matrix = getBoolMatrix(hash, patternSize);
 
   // Create a canvas element for the identicon

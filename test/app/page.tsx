@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { generateIdenteapot } from "../..";
+import { generateIdenteapot } from "../../index";
 
 type State = {
   image: string | null;
@@ -20,7 +20,7 @@ export default function Home() {
   useEffect(() => {
     let image: string | null = null;
     if (state.input !== "") {
-      image = generateIdenteapot(state.input);
+      image = generateIdenteapot(state.input, process.env.NEXT_PUBLIC_IDENTEAPOTS_SALT);
     }
     setState(prev => ({ ...prev, image }));
   }, [state.input]);
