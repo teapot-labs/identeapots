@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { generateIdenteapot } from "../..";
+import { generateIdenteapot } from "../../index";
 
 type State = {
   image: string | null;
