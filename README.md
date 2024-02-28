@@ -1,11 +1,13 @@
-# Indeteapot
+<img src="https://github.com/teapot-labs/identeapots/raw/main/assets/identeapots.png" title="Identeapots" width="100%"/>
 
-Identeapot is a simple TypeScript library for generating identicon images.
+# Indeteapots
+
+Identeapots is a simple TypeScript library for generating identicon images.
 
 ## Installation
 
 ```bash
-npm install identeapot
+npm i identeapots
 ```
 
 ## Usage
@@ -13,19 +15,22 @@ npm install identeapot
 The return value of the `generateIdenteapot` function is [a base64 encoded string of the generated identicon image.](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
 
 ```typescript
-import { generateIdenteapot } from 'identeapot';
+import { generateIdenteapot } from "identeapots";
 
-const identicon: string = generateIdenteapot('hello world', 'salt');
-
+const identicon: string = generateIdenteapot("hello world", "salt");
 ```
 
 Which can be used in `<img>` tags as `src` attribute.
 
 ```html
-<img src=identicon alt="Identeapot" />
+<img src="{identicon}" alt="Example Identeapot" />
 ```
 
-## Exaple
+This will generate the following image:
+
+<img src="https://github.com/teapot-labs/identeapots/raw/main/assets/hello-world.png" title="Example Identeapot" width="200px"/>
+
+## Example
 
 A complete example of a NextJS application is available in the `/test` folder
 
