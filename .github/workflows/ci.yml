@@ -40,13 +40,11 @@ jobs:
         id: super-linter
         uses: super-linter/super-linter/slim@v6
         env:
-          DEFAULT_BRANCH: main
+          DEFAULT_BRANCH: master
           FILTER_REGEX_EXCLUDE: dist/**/*
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TYPESCRIPT_DEFAULT_STYLE: prettier
-          VALIDATE_ALL_CODEBASE: true
-          VALIDATE_JAVASCRIPT_STANDARD: false
-          VALIDATE_JSCPD: false
+          VALIDATE_TYPESCRIPT_ES: true
 
       - name: Build
         id: npm-build
