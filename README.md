@@ -12,18 +12,19 @@ npm i @teapotlabs/identeapots
 
 ## Usage
 
-The return value of the `generateIdenteapot` function is [a base64 encoded string of the generated identicon image.](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
+The return value of the `generateIdenteapot` function is [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
 
 ```typescript
 import { generateIdenteapot } from "@teapotlabs/identeapots";
 
+// data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACPEAAAH0C...
 const identicon: string = generateIdenteapot("hello world", "salt");
 ```
 
 Which can be used in `<img>` tags as `src` attribute.
 
-```html
-<img src="{identicon}" alt="Example Identeapot" />
+```jsx
+<img src={identicon} alt="Example Identeapot" />
 ```
 
 This will generate the following image:
