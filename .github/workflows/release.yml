@@ -7,6 +7,9 @@ on:
         required: true
 jobs:
   release:
+    permissions:
+      contents: write
+      packages: write
     runs-on: ubuntu-latest
     steps:
       # Checkout project repository
