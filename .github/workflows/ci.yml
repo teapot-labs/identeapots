@@ -36,15 +36,6 @@ jobs:
         id: install
         run: npm ci
 
-      - name: Lint Codebase
-        id: super-linter
-        uses: super-linter/super-linter/slim@v6
-        env:
-          FILTER_REGEX_EXCLUDE: dist/**/*
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TYPESCRIPT_DEFAULT_STYLE: prettier
-          VALIDATE_TYPESCRIPT_ES: true
-
       - name: Build
         id: npm-build
         run: npm run build

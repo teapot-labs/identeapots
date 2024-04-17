@@ -16,6 +16,12 @@ jobs:
       contents: read
       packages: write
     steps:
+      - name: 📦 Install Dependencies
+        run: npm install
+
+      - name: 🛠️ Build @teapotlabs/identeapots
+        run: npm run build
+
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
