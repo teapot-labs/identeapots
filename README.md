@@ -6,6 +6,8 @@ Identeapots is a simple TypeScript library for generating identicon images.
 
 The library has **no dependencies** and is designed to be lightweight and easy to use.
 
+**[See the demo application »](https://identeapots.pages.dev/)**
+
 ## Installation
 
 ```bash
@@ -72,7 +74,17 @@ const identicon: string = generateIdenteapot("hello world", {
 
 ## Example
 
-A complete example of a NextJS application is available in the `/demo` folder
+A complete example of a NextJS application is available in the `/demo` folder.
+You can run it locally by cloning the repository and running:
+
+```bash
+npm install
+npm run dev
+```
+
+Then open your browser and navigate to `http://localhost:3000`.
+
+You can also view the demo application online at [https://identeapots.pages.dev/](https://identeapots.pages.dev/).
 
 ## Contributing
 
