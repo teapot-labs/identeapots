@@ -76,6 +76,7 @@ jobs:
         run: yarn publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # Push repository changes
       - name: Push changes to repository
