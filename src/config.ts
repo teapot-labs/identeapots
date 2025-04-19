@@ -7,10 +7,11 @@ export type IdenteapotConfig = {
   // ===== Hash Configuration =====
 
   /**
-   * The salt used to generate the hash.
-   * This is used to create a unique hash for the identicon.
+   * A string that is appended to the seed before hashing.
+   * This is useful for generating different identicons from the same seed.
+   * @default ""
    */
-  salt?: string;
+  salt: string;
 
   // ===== Color Configuration =====
 
@@ -64,6 +65,7 @@ export type IdenteapotConfig = {
  * Default configuration for the identeapot.
  */
 export const defaultConfig: IdenteapotConfig = {
+  salt: "",
   paletteSize: 8,
   coloredCellLightness: 60,
   emptyCellLightness: 90,
