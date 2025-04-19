@@ -1,20 +1,8 @@
+import { defaultConfig, IdenteapotConfig } from "./config";
 import { hashString } from "./hash";
 import { getBoolMatrix } from "./matrix";
 import { getNeighbours } from "./neighbours";
 import * as paths from "./paths";
-
-// Color variables
-const coloredCellLightness = 60; // Adjusted lightness for colored cells
-const emptyCellLightness = 90; // Adjusted lightness for the background
-const paletteSize = 8; // Number of colors in the palette
-
-// Identicon variables
-const size = 400; // Size of the final image in pixels
-const gridSize = 9; // Size of the grid (number of cells in each row/column)
-const gridCellSize = size / gridSize; // Size of each grid cell in pixels
-const patternSize = 7; // Size of the identicon pattern (number of cells in each row/column)
-const padding = (gridSize - patternSize) / 2; // Padding around the identicon pattern in grid cells
-const overlap = 0.5; // Overlap to avoid gaps between cells in pixels
 
 /**
  * Generates an identeapot from the provided `seed`.
@@ -22,7 +10,28 @@ const overlap = 0.5; // Overlap to avoid gaps between cells in pixels
  * @param salt The salt to use for hashing the seed.
  * @returns The generated identeapot as a data URL.
  */
-export async function generateIdenteapot(seed: string, salt?: string): Promise<string> {
+export async function generateIdenteapot(seed: string, salt?: string): Promise<string>;
+/**
+ * Generates an identeapot from the provided `seed` and configuration.
+ * @param seed The seed to use for generating the identeapot.
+ * @param config The configuration object for generating the identeapot.
+ * @returns The generated identeapot as a data URL.
+ */
+export async function generateIdenteapot(seed: string, config?: Partial<IdenteapotConfig>): Promise<string>;
+
+export async function generateIdenteapot(seed: string, saltOrConfig?: string | Partial<IdenteapotConfig>): Promise<string> {
+  const config: IdenteapotConfig = defaultConfig;
+  if (typeof saltOrConfig === "string") {
+    config.salt = saltOrConfig;
+  } else if (typeof saltOrConfig === "object") {
+    Object.assign(config, saltOrConfig);
+  }
+  // Extract configuration values and compute derived values
+  const { salt, paletteSize, coloredCellLightness, emptyCellLightness, size, gridSize, patternSize, overlap } = config;
+  const gridCellSize = size / gridSize; // Size of each grid cell in pixels
+  const padding = (gridSize - patternSize) / 2; // Padding around the identicon pattern in grid cells
+
+  // Perform hashing with the provided seed and salt
   const hash = await hashString(seed, salt);
   const matrix = getBoolMatrix(hash, patternSize);
 
