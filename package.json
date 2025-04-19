@@ -1,6 +1,6 @@
 {
   "name": "@teapotlabs/identeapots",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "private": false,
   "description": "Identeapots is a simple TypeScript library for generating identicon images.",
   "author": "Teapot Labs <info@teapotlabs.it>",
@@ -27,7 +27,7 @@
   "scripts": {
     "clean": "rimraf dist/",
     "build": "tsc",
-    "test": "npm run dev --prefix test/"
+    "demo": "npm run dev --prefix demo/"
   },
   "devDependencies": {
     "rimraf": "^6.0.0",
