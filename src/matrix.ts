@@ -10,13 +10,14 @@ export function getBoolMatrix(hash: string, size: number): boolean[][] {
   const groupSize = Math.ceil(size / 2);
   const matrix: boolean[][] = [];
 
-  for (let i = 0; i < hash.length; i += groupSize) {
-    const group = hashArray.slice(i, i + groupSize).map(char => char.charCodeAt(0) % 2 === 0);
-    const mirror = [...group].reverse();
-    if (size % 2 !== 0) mirror.shift();
-    matrix.push([...group, ...mirror]);
+  for (let i = 0; matrix.length < size; i += groupSize) {
+    const group = Array.from({ length: groupSize }, (_, j) => {
+      const char = hashArray[(i + j) % hashArray.length];
+      return char.charCodeAt(0) % 2 === 0;
+    });
 
-    if (matrix.length === size) break;
+    const mirror = group.slice(0, size % 2 === 0 ? groupSize : groupSize - 1).reverse();
+    matrix.push([...group, ...mirror]);
   }
 
   return matrix;
