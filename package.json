@@ -27,7 +27,7 @@
   "scripts": {
     "clean": "rimraf dist/",
     "build": "tsc",
-    "test": "npm run dev --prefix test/"
+    "demo": "npm run dev --prefix demo/"
   },
   "devDependencies": {
     "rimraf": "^6.0.0",

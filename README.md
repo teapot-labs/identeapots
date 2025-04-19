@@ -72,7 +72,7 @@ const identicon: string = generateIdenteapot("hello world", {
 
 ## Example
 
-A complete example of a NextJS application is available in the `/test` folder
+A complete example of a NextJS application is available in the `/demo` folder
 
 ## Contributing
 

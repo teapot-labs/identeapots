@@ -9,8 +9,8 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "jsx": "react",
-    "strict": true,
+    "strict": true
   },
-  "exclude": ["node_modules", "dist", "test"],
+  "exclude": ["node_modules", "dist", "demo"],
   "include": ["**/*.ts", "**/*.tsx"]
 }
