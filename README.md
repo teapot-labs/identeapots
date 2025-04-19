@@ -4,7 +4,7 @@
 
 Identeapots is a simple TypeScript library for generating identicon images.
 
-The library has no dependencies and is designed to be lightweight and easy to use.
+The library has **no dependencies** and is designed to be lightweight and easy to use.
 
 ## Installation
 
