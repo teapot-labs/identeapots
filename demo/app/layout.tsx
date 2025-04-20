@@ -21,15 +21,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const classString = clsx("mx-auto flex min-h-screen max-w-screen-lg flex-col", inter.variable, "antialiased");
+  const classString = clsx(
+    "mx-auto flex min-h-screen max-w-screen-lg flex-col items-end gap-4",
+    inter.variable,
+    "antialiased",
+  );
 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={classString}>
         <ThemeProvider>
-          <ThemeToggle className="absolute top-4 right-4" />
-          <main className="flex flex-1 flex-col items-center justify-center p-4">{children}</main>
-          <Footer />
+          <ThemeToggle className="me-4 mt-4 sm:absolute sm:top-0 sm:right-0" />
+          <main className="flex w-full flex-1 flex-col items-center justify-center p-4">{children}</main>
+          <Footer className="w-full" />
         </ThemeProvider>
       </body>
     </html>
