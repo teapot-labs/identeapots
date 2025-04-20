@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const classString = clsx(
-    "mx-auto flex min-h-screen max-w-screen-lg flex-col items-end gap-4",
+    "mx-auto flex min-h-screen max-w-screen-lg flex-col items-end",
     inter.variable,
     "antialiased",
   );
