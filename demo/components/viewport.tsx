@@ -17,26 +17,33 @@ type ViewportProps = {
 const Viewport = (props: ViewportProps) => {
   const { src, alt, placeholder, size = 400, className } = props;
 
-  const classString = clsx("rounded-field", className);
+  const classString = clsx(
+    "relative",
+    `h-(--viewport-size-sm) w-(--viewport-size-sm) sm:h-(--viewport-size) sm:w-(--viewport-size)`,
+    className,
+  );
+  const style = {
+    "--viewport-size": `${size}px`,
+    "--viewport-size-sm": `${size * 0.8}px`,
+  } as React.CSSProperties;
+
+  const childClassString = "rounded-field";
   const placeholderClassString = clsx(
+    childClassString,
+    "h-full w-full",
     "flex items-center justify-center",
     "bg-base-100 border-base-content/60 text-base-content/80 border border-dashed text-base",
-    classString,
   );
-  const placeholderStyle = {
-    height: `${size}px`,
-    width: `${size}px`,
-  };
 
-  if (!src) {
-    return (
-      <div className={placeholderClassString} style={placeholderStyle}>
-        {placeholder}
-      </div>
-    );
-  }
-
-  return <Image src={src} alt={alt} width={size} height={size} className={classString} />;
+  return (
+    <div className={classString} style={style}>
+      {src ? (
+        <Image src={src} alt={alt} className={childClassString} fill />
+      ) : (
+        <div className={placeholderClassString}>{placeholder}</div>
+      )}
+    </div>
+  );
 };
 
 export default Viewport;
