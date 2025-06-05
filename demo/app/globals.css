@@ -3,6 +3,12 @@
   logs: false;
 }
 
+@utility font-default {
+  font-family:
+    var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
 @plugin "daisyui/theme" {
   name: "dark";
   default: false;

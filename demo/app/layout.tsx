@@ -24,7 +24,7 @@ export default function RootLayout({
   const classString = clsx(
     "mx-auto flex min-h-screen max-w-screen-lg flex-col items-end",
     inter.variable,
-    "antialiased",
+    "font-default antialiased",
   );
 
   return (
