@@ -22,10 +22,10 @@ jobs:
       - name: 🛠️ Build @teapotlabs/identeapots
         run: npm run build
 
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: "22.x"
+          node-version: "24.x"
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm publish --access=public
